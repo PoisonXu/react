@@ -1,0 +1,34 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.contenier {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenier footer {
+  height: 50px;
+  background: yellowgreen;
+}
+
+.contenier main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenier main header {
+  height: 44px;
+  background: skyblue;
+}
+
+.contenier main .content {
+  flex: 1;
+  overflow: auto;
+}

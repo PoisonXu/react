@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from './Banner'
-export default ({ contentList }) => (
+export default ({ contentData }) => (
   <div className = 'content'>
-    <Banner bannerList = { contentList.bannerList } />
+    <Banner bannerList = { contentData.bannerList } />
     <ul>
       {
-        contentList.proList.map((item, index) => (
+        contentData.proList.map((item, index) => (
           <li key = { index }>
             <Link to = {'/detail/' + item.id }>
               <img src = {item.images.small} alt = ''/>

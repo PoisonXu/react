@@ -6,6 +6,7 @@ import App from '@/layout/App';
 import Detail from '@/layout/Detail';
 import * as serviceWorker from './serviceWorker';
 import '@/lib/reset.scss';
+import  store  from '@/store';
 
 // ReactDOM.render( //哈希模式
 // <HashRouter> 
@@ -15,15 +16,20 @@ import '@/lib/reset.scss';
 // </HashRouter>,
 // document.getElementById('root'));
 
-ReactDOM.render( // 浏览器模式 
-<BrowserRouter>
-  <Switch>
-    <Route path="/detail/:id" component = { Detail }/>
-    <Route path="/" component = { App }/>
-  </Switch>
-</BrowserRouter>,
-document.getElementById('root'));
+function renderFn() {
+  ReactDOM.render( // 浏览器模式 
+  <BrowserRouter>
+    <Switch>
+      <Route path="/detail/:id" component = { Detail }/>
+      <Route path="/" component = { App }/>
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById('root'));
+}
 
+renderFn()
+
+store.subscribe(renderFn)
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

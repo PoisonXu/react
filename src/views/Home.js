@@ -38,7 +38,7 @@ class Com extends React.Component {
         <header className = "header">
           这是home头部
         </header>
-        <HomeContent contentList = { store.getState() }/>
+        <HomeContent contentData = { store.getState() }/>
       </main>
     )
   }

@@ -4,14 +4,18 @@ const reducer = (state = {
   bannerList: [],
   proList: []
 }, {type, data}) => {
-  console.log(state)
-  // console.log(data)
   switch (type) {
     case 'changeBannerList':
-      state.bannerList = data
+      state = {
+        bannerList: data,
+        proList: state.proList
+      }
       return state;
     case 'changeProList':
-      state.proList = data
+        state = {
+          bannerList: state.bannerList,
+          proList: data
+        }
       return state;
     default:
       return state;
